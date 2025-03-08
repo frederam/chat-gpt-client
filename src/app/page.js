@@ -21,7 +21,7 @@ export default function Chat() {
       <div className="py-8 text-3xl">
         ChatGPT Text Client
       </div>
-      <div className="w-full max-w-3xl flex-1 overflow-y-auto p-4 space-y-2 scrollbar-custom mb-40">
+      <div className="w-full max-w-3xl flex-1 overflow-y-auto p-4 space-y-2 scrollbar-custom mb-4">
         {messages.map((m) => (
           <div key={m.id} className={`whitespace-pre-wrap flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
             <div
