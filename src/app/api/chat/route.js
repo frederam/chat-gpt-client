@@ -20,11 +20,37 @@ export async function POST(req) {
           location: z.string().describe("The location to get the weather for"),
         }),
         execute: async ({ location }) => {
-          const temperature = Math.round(Math.random() * (90 - 32) + 32);
-          return {
-            location,
-            temperature,
-          };
+          try {
+            const geoResponse = await fetch(
+              `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
+                location
+              )}&count=1&language=en&format=json`
+            );
+            const geoData = await geoResponse.json();
+            if (!geoData.results || geoData.results.lenght === 0) {
+              throw new Error("Location not found");
+            }
+
+            const { latitude, longitude } = geoData.results[0];
+
+            const weatherResponse = await fetch(
+              `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m&temperature_unit=fahrenheit`
+            );
+
+            const weatherData = await weatherResponse.json();
+
+            return {
+              location,
+              temperature: weatherData.current.temperature_2m,
+            };
+          } catch (error) {
+            return { error: error.message };
+          }
+          // const temperature = Math.round(Math.random() * (90 - 32) + 32);
+          // return {
+          //   location,
+          //   temperature,
+          // };
         },
       }),
     },
