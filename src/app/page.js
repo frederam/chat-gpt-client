@@ -25,7 +25,7 @@ export default function Chat() {
           placeholder="Say something..."
           onChange={handleInputChange}
         />
-        <button type="submit" className="px-4 py-2 bg-[#66686b] text-white rounded-lg hover:bg-[#9b9ea1] hover:cursor-pointer">
+        <button type="submit" className="px-4 py-2 bg-blue-600 dark:bg-[#66686b] text-white rounded-lg hover:dark:bg-[#9b9ea1] hover:bg-blue-500 hover:cursor-pointer">
           Send
         </button>
       </form>
