@@ -36,8 +36,8 @@ export default function Chat() {
       </div>
       <form
         onSubmit={handleFormSubmit}
-        className={`w-full max-w-2xl flex items-end gap-2 bg-white dark:bg-zinc-900 p-1 border border-gray-400 rounded-lg shadow-2xl shadow-offset-y-[15px] transition-all duration-300 ${
-          isFirstMessageSent ? "fixed bottom-10" : "absolute top-1/2 -translate-y-1/2"
+        className={`w-3/4 md:w-full max-w-3xl flex items-end gap-2 bg-white dark:bg-zinc-900 p-1 border border-gray-400 rounded-lg shadow-2xl shadow-offset-y-[15px] transition-all duration-300 ${
+          isFirstMessageSent ? "bottom-10" : "absolute top-1/2 -translate-y-1/2"
         }`}
       >
         <textarea
