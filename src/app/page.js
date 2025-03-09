@@ -77,9 +77,10 @@ export default function Chat() {
       </div>
 
       {showScrollButton && (
-        <div className="fixed bottom-50 bg-blue-600 dark:bg-[#66686b] text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-500 hover:dark:bg-[#9b9ea1] transition">
+        <div className="fixed bottom-50 bg-blue-600 dark:bg-[#66686b] text-white  rounded-lg shadow-lg hover:bg-blue-500 hover:dark:bg-[#9b9ea1] transition">
           {" "}
           <button
+            className="hover:cursor-pointer px-4 py-2"
             onClick={() =>
               messagesContainerRef.current?.scrollTo({
                 top: messagesContainerRef.current.scrollHeight,
