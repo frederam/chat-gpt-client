@@ -40,3 +40,17 @@ body {
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
   background: #9b9ea1;
 }
+
+@media (prefers-color-scheme: light) {
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Light background */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #b0b0b0; /* Light mode thumb color */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: #8c8c8c; /* Light mode thumb hover color */
+  }
+}

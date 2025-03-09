@@ -46,11 +46,6 @@ export async function POST(req) {
           } catch (error) {
             return { error: error.message };
           }
-          // const temperature = Math.round(Math.random() * (90 - 32) + 32);
-          // return {
-          //   location,
-          //   temperature,
-          // };
         },
       }),
     },
