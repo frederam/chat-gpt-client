@@ -95,7 +95,7 @@ export default function Chat() {
 
       <form
         onSubmit={handleFormSubmit}
-        className={`w-3/4 md:w-full max-w-3xl flex items-end gap-2 bg-white dark:bg-zinc-900 p-1 border border-gray-400 rounded-lg shadow-2xl shadow-offset-y-[15px] transition-all duration-300 ${
+        className={`w-11/12 md:w-full max-w-3xl flex items-end gap-2 bg-white dark:bg-zinc-900 p-1 border border-gray-400 rounded-lg shadow-2xl shadow-offset-y-[15px] transition-all duration-300 ${
           isFirstMessageSent ? "bottom-10" : "absolute top-1/2 -translate-y-1/2"
         }`}
       >
@@ -113,7 +113,10 @@ export default function Chat() {
         />
         <button
           type="submit"
-          className="px-4 py-2 m-1 bg-blue-600 dark:bg-[#66686b] text-white rounded-lg hover:dark:bg-[#9b9ea1] hover:bg-blue-500 hover:cursor-pointer self-end"
+          className={`px-4 py-2 m-1 bg-blue-600 dark:bg-[#66686b] text-white rounded-lg hover:dark:bg-[#9b9ea1] ${
+            status === "streaming" ? "hover:cursor-default" : " hover:cursor-pointer"
+          } hover:bg-blue-500 self-end`}
+          disabled={status === "streaming" ? true : false}
         >
           Send
         </button>
